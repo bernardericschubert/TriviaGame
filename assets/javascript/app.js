@@ -18,7 +18,7 @@ $(document).ready(function() {
         }, 
         {
           question: "Who is MSU's all time leading scorer?",
-          choices: ["Shawn Respert", "Magic Johnson", "Scott Skiles", "Draymond Greenn", "Steve Smith"],
+          choices: ["Shawn Respert", "Magic Johnson", "Scott Skiles", "Draymond Green", "Steve Smith"],
           answer: "Shawn Respert",
           trivia: "Between 1991 and 1995, Respert scored 2531 points.  This is 2nd best all time in the Big Ten."
         }, 
@@ -39,11 +39,19 @@ $(document).ready(function() {
     var correctGuesses = 0;
     var incorrectGuesses = 0;
     var counter = 0;
-    var timer = 5;
+    var timer = 11;
 
     // Reset timer
     function resetTimer() {
-        timer = 5;
+        timer = 11;
+    }
+
+    // Reset game
+    function resetGame() {
+        correctGuesses = 0;
+        incorrectGuesses = 0;
+        counter = 0;
+        timer = 11;
     }
 
     // Timer function
@@ -72,13 +80,45 @@ $(document).ready(function() {
     
     // Function to create the question
     function question() {
-        $("#game").html(
-            "<div class='col-md-12 text-center'><p>" + questions[counter].question + "</p><p><button type='button' class='btn btn-outline-success'>" + questions[counter].choices[0] + "</button></p><p><button type='button' class='btn btn-outline-success'>" + questions[counter].choices[1] + "</button></p><p><button type='button' class='btn btn-outline-success'>" + questions[counter].choices[2] + "</button></p><p><button type='button' class='btn btn-outline-success'>" + questions[counter].choices[3] + "</button></p><p><button type='button' class='btn btn-outline-success'>" + questions[counter].choices[4] + "</button></p></div>"
-        );
-        countDown();
+        if (counter < questions.length) {
+            $("#game").html(
+                "<div class='col-md-12 text-center'><p>" + questions[counter].question + "</p><p><button type='button' class='btn2 btn-outline-success'>" + questions[counter].choices[0] + "</button></p><p><button type='button' class='btn2 btn-outline-success'>" + questions[counter].choices[1] + "</button></p><p><button type='button' class='btn2 btn-outline-success'>" + questions[counter].choices[2] + "</button></p><p><button type='button' class='btn2 btn-outline-success'>" + questions[counter].choices[3] + "</button></p><p><button type='button' class='btn2 btn-outline-success'>" + questions[counter].choices[4] + "</button></p></div>"
+            );
+            countDown();
+        }
+        else {
+            $("#game").html("<div class='col-md-12 text-center'><img src='assets/images/msu-logo-transparent-7.png'><p>The final results are: </p><p>Correct answers: " + correctGuesses + "</p><p>Incorrect answers: " + incorrectGuesses + "</p>");
+            $("#game").append("<div class='col-12 text-center'><button type='button' class='btn btn-primary' id='start'>RESTART</button></div>");
+            resetGame();
+            $("#start").on("click", question);
+        }
     }
     
     // Start button
     $("#start").on("click", question);
+
+    // Function to determine right or wrong answer
+    $("#game").on("click", ".btn2", (function() {
+        var guess = $(this).text();
+        console.log(guess);
+		if (guess === questions[counter].answer) {
+            clearInterval(clock);
+            setTimeout(resetTimer,5000);
+            setTimeout(question,5000);
+            $("#timer div").empty();
+            $("#game").html("<div class='col-md-12 text-center'><p>Great job! " + questions[counter].answer + " was the correct answer.</p><p>" + questions[counter].trivia + "</div>");
+            correctGuesses++;
+            counter++;
+		}
+		else {
+            clearInterval(clock);
+            setTimeout(resetTimer,5000);
+            setTimeout(question,5000);
+            $("#timer div").empty();
+			$("#game").html("<div class='col-md-12 text-center'><p>Sorry, that was incorrect. " + questions[counter].answer + " was the correct answer.</p><p>" + questions[counter].trivia + "<div>");
+            incorrectGuesses++;
+            counter++;
+		}
+	}));
 
 });
