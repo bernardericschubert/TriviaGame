@@ -1,0 +1,106 @@
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 34px;
+    color: #777;
+    background: url("../images/concrete_seamless.png");
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.body-container {
+    margin-bottom: 40px;
+    padding: 20px 40px 40px 40px;
+}
+
+#masthead {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    margin: 0 0 30px;
+    overflow: auto;
+    color: #fff;
+    background: #fff;
+    border-bottom: 2px solid lightblue;
+    font-size: 18px;
+  }
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: black;
+}  
+
+hr {
+    padding-bottom: 5px;
+    border-top: 2px solid lightblue;
+}
+
+.p-image {
+    margin-top: 10px;
+}
+
+form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.form-control-lg {
+    height: 250px;
+}
+
+.card {
+    border-color: lightblue;
+    border-width: 2px;
+}
+
+.img-sub-row {
+    padding-top: 30px;
+}
+
+.fixed-bottom {
+    background: #666;
+    border-top: 5px solid lightblue;
+}
+
+footer {
+    clear: both;
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+  }
+
+.rounded {
+    padding-left: 10px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-color: lightblue;
+    border-width: 1px;
+}
+
+.instructions {
+    padding-right: 25px;
+}
+
+.roundedEmoji {
+    padding: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-color: lightblue;
+    border-width: 1px;
+}
+
+.pItalic {
+    font-style: italic;
+}

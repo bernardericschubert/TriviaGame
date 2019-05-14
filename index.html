@@ -1,0 +1,72 @@
+<!-- HW5 Trivia Game -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Trivia Game</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header id="masthead">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">Eric Schubert</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="https://bernardericschubert.github.io/Bootstrap-Portfolio/index.html">About</a>
+                    <a class="nav-item nav-link" href="https://bernardericschubert.github.io/Bootstrap-Portfolio/portfolio.html">Portfolio</a>
+                    <a class="nav-item nav-link" href="https://bernardericschubert.github.io/Bootstrap-Portfolio/contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>  
+    </header>
+
+    <br><br><br>
+
+    <div class="container bg-light body-container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Michigan State Basketball Trivia</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12"><hr></div>
+        </div>
+
+        <div class="row" id="game">
+            <div class="col-md-12 instructions">
+                <p class="pItalic">Here is how this works:</p>
+                <p>When you hit START you'll be given 5 multiple choice questions about MSU men's basketball.</p>
+                <p>You can only select one answer for each question</p>
+                <p>Answer before the timer runs out! Good luck. GO GREEN.</p>
+            </div>
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-primary" id="start">START</button>
+            </div>
+        </div>
+        
+        <div class="row" id="timer"></div>
+    </div>
+
+    <footer>
+        <div class="fixed-bottom">Copyright Eric Schubert 2019&copy;</div>
+    </footer>
+
+    <!-- Link JS file -->
+    <script src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
